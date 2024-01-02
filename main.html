@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> </title>
+    <title>PDF Viewer</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -33,14 +33,21 @@
         #pdf-container {
             margin-top: 20px;
         }
+
+        /* Responsive styles */
+        @media only screen and (max-width: 600px) {
+            button {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
 
     <h2></h2>
 
-    <button onclick="showPDF('VA-ohjeet-FIN.pdf')">SUOMI</button>
-    <button onclick="showPDF('VA-ohjeet-ENG.pdf')">ENGLISH</button>
+    <button onclick="showPDF('yourfileFIN.pdf')">SUOMI</button>
+    <button onclick="showPDF('yourfileENG.pdf')">ENGLISH</button>
 
     <div id="pdf-container">
         <!-- PDF will be displayed here -->
@@ -49,7 +56,7 @@
     <script>
         function showPDF(pdfFileName) {
             var pdfContainer = document.getElementById('pdf-container');
-            pdfContainer.innerHTML = `<embed src="${pdfFileName}" type="application/pdf" width="100%" height="600px" />`;
+            pdfContainer.innerHTML = `<embed src="${pdfFileName}" type="application/pdf" width="100%" height="600px" scrolling="yes" />`;
         }
     </script>
 
